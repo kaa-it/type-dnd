@@ -1,0 +1,28 @@
+.ingredientDetails {
+  padding: 40px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredientDetailsHead {
+  min-width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ingredientDetailsHead svg {
+  cursor: pointer;
+}
+
+.ingredientDetailsInfo,
+.ingredientDetailsInfo div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredientDetailsInfo div {
+  flex-direction: column;
+}

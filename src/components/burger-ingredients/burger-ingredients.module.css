@@ -1,0 +1,16 @@
+.wrap {
+  max-width: 600px;
+  max-height: 65vh;
+  /* overflow: hidden; */
+  overflow-y: auto;
+}
+
+.burgerIngredientsTabs {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.burgerIngredients {
+  display: flex;
+  flex-direction: column;
+}

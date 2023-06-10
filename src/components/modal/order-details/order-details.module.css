@@ -1,0 +1,14 @@
+.orderDetailsContainer {
+  position: relative;
+  padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  cursor: pointer;
+}

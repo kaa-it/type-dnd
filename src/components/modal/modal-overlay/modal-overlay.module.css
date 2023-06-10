@@ -1,0 +1,16 @@
+.active {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  z-index: 1;
+  transition: 0.5s;
+  pointer-events: all;
+}

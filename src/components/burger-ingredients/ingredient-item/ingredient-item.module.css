@@ -1,0 +1,28 @@
+.item,
+.itemIsDrag {
+  position: relative;
+  max-width: 270px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.itemIsDrag {
+  opacity: 0;
+}
+
+.priceAndIcon {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
