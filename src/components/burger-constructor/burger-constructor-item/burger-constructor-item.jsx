@@ -10,16 +10,9 @@ import styles from './burger-constructor-item.module.css';
 import { useDrop, useDrag } from 'react-dnd';
 import { useRef } from 'react';
 import { DECREMENT_BURGER_INGREDIENT_COUNT } from '../../../services/actions/burger-ingredients-actions';
+import {ingredientPropTypes} from "../../../utils/ingredientPropTypes";
 
-export const BurgerConstructorItem = ({
-  itemId,
-  image,
-  price,
-  name,
-  ID,
-  index,
-  moveIngredients,
-}) => {
+export const BurgerConstructorItem = ({ item, index, moveIngredients }) => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
@@ -65,7 +58,7 @@ export const BurgerConstructorItem = ({
   const [{ isDragging }, drag] = useDrag({
     type: 'ingredient',
     item: () => {
-      return { ID, index };
+      return { ...item, index };
     },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
@@ -84,17 +77,17 @@ export const BurgerConstructorItem = ({
     >
       <DragIcon className="dragIcon" type="primary" />
       <ConstructorElement
-        text={name}
-        price={price}
-        thumbnail={image}
+        text={item.name}
+        price={item.price}
+        thumbnail={item.image}
         handleClose={() => {
           dispatch({
             type: DELETE_INGREDIENT_FROM_BURGER_CONSTRUCTOR,
-            ID,
+            ID: item.ID,
           });
           dispatch({
             type: DECREMENT_BURGER_INGREDIENT_COUNT,
-            payload: { itemId },
+            payload: { itemId: item._id },
           });
         }}
       />
@@ -103,11 +96,7 @@ export const BurgerConstructorItem = ({
 };
 
 BurgerConstructorItem.propTypes = {
-  itemId: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.number,
-  name: PropTypes.string,
-  ID: PropTypes.string,
-  index: PropTypes.number,
+  item: ingredientPropTypes.isRequired,
+  index: PropTypes.number.isRequired,
   moveIngredients: PropTypes.func,
 };

@@ -98,12 +98,8 @@ const BurgerConstructor = () => {
                 ingredient.type !== 'bun' && (
                   <BurgerConstructorItem
                     key={ingredient.ID}
-                    ID={ingredient.ID}
-                    image={ingredient.image}
-                    name={ingredient.name}
-                    price={ingredient.price}
+                    item={ingredient}
                     index={index}
-                    itemId={ingredient._id}
                     moveIngredients={moveIngredients}
                   />
                 )
