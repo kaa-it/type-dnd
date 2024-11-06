@@ -11,6 +11,13 @@ import { useDrop, useDrag } from 'react-dnd';
 import { useRef } from 'react';
 import { DECREMENT_BURGER_INGREDIENT_COUNT } from '../../../services/actions/burger-ingredients-actions';
 import {ingredientPropTypes} from "../../../utils/ingredientPropTypes";
+// import {TConstructorIngredient} from "../../../utils/types";
+
+// type TBurgerConstructorItem = {
+//   item: TConstructorIngredient;
+//   index: number;
+//   moveIngredients: (dragIndex: number, hoverIndex: number) => void;
+// }
 
 export const BurgerConstructorItem = ({ item, index, moveIngredients }) => {
   const dispatch = useDispatch();
